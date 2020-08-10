@@ -6,7 +6,7 @@
 一个栈stack_1用来压（push）数据，一个栈stack_2用来弹（pop）数据；
 在弹数据时，需要进行判断是否stack_2为空，如果非空，直接弹出stack_2中的数据；如果为空，则将所有stack_1中的数据全部弹出后压进stack_2，此时便可以实现先进去stack_1的数据便会先弹出来，实现先进先出的功能。
 具体代码实现如下：
-```
+```python
 class Solution:
     def __init__(self):
         self.stack_1 = []
