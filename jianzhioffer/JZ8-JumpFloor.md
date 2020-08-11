@@ -44,7 +44,7 @@ class Solution:
         return self.memo[number]
 ```
 
-# 感想
+# 解答三——循环求解
 
 此题和斐波那契数列的递推公式一样，因此，该题的本质与斐波那契数列一致，接下来对其进行进一步的总结，对其斐波那契数列，python有一种非常简单的实现方法，具体如下：
 ```python
@@ -59,3 +59,5 @@ def jumpFloor(self, number):
             t1, t2 = t2, t1+t2
         return t2
 ```
+
+# 类似的例题分析：
