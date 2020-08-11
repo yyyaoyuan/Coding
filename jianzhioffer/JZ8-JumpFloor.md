@@ -43,3 +43,19 @@ class Solution:
             self.memo[i] = self.memo[i-1] + self.memo[i-2]
         return self.memo[number]
 ```
+
+# 感想
+
+此题和斐波那契数列的递推公式一样，因此，该题的本质与斐波那契数列一致，接下来对其进行进一步的总结，对其斐波那契数列，python有一种非常简单的实现方法，具体如下：
+```python
+def jumpFloor(self, number):
+        # write code here
+        if number < 0:
+            print('Please input a positive integer')
+        if 0 < number <= 2:
+            return number
+        t1, t2 = 1, 2
+        for _ in range(3, number+1):
+            t1, t2 = t2, t1+t2
+        return t2
+```
