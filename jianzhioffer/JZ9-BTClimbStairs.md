@@ -61,5 +61,27 @@ class Solution:
 # 解答四——记忆化搜索
 接下来对解答三中的递归方法进行改造，采用记忆化搜索的方法节省计算时间，具体如下：
 ```python
-
+class Solution:
+    def jumpFloorII(self, number):
+        # write code here
+        self.memo = [-1]*(number+1)
+        return self.jump(number)
+    def jump(self, number):
+        if number < 0:
+            print('Please input a positive integer')
+        if number == 0 or number == 1 or number == 2:
+            self.memo[number] = number
+            return self.memo[number]
+        if self.memo[number] == -1:
+            sum = 0
+            for i in range(1, number):
+                sum += self.jump(i)
+            self.memo[number] = sum + 1
+            return self.memo[number]
+        else:
+            return self.memo[number]
 ```
+
+# 感想
+
+该方法可以采用上述四种方法进行求解，其中速度最慢的是递归迭代，因为使用了大量的重复运算。数学归纳法比较适用于该方法，因为可以总结出通项公式，如果找不到通项公式，则不能采用该方法，因此我认为归纳法的使用范围是比较有限的，并且我个人并不建议练习的时候采用归纳法对问题进行求解，这样不太好训练自己的计算机思维。记忆化搜索和动态规划均是采用了空间换时间的方法，一个是自顶向下进行运算，一个是自底向上进行运算。
