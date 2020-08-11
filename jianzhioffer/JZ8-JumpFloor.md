@@ -26,3 +26,20 @@ class Solution:
             return self.memo[number]
         return self.memo[number]
 ```
+
+# 解答二——动态规划
+
+按照解答一中的递推公式：f(n) = f(n-1) + f(n-2)，可知需要两个初始值，便可以实现自底向上的计算过程，具体实现如下：
+```python
+class Solution:
+    def jumpFloor(self, number):
+        # write code here
+        if number < 0:
+            print('Please input a positive integer')
+        self.memo = [0]*(number+1)
+        self.memo[0] = 1
+        self.memo[1] = 1
+        for i in range(2, number+1):
+            self.memo[i] = self.memo[i-1] + self.memo[i-2]
+        return self.memo[number]
+```
