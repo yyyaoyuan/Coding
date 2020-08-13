@@ -40,7 +40,7 @@ class Solution:
     # 返回构造的TreeNode根节点
     def reConstructBinaryTree(self, pre, tin):
         # write code here
-        if not tin:
+        if not tin:                                # 这里用的tin，因为在这种情况下pre的长度比tin长
             return None
         root = TreeNode(pre.pop(0))                # 调用了pop函数
         index = tin.index(root.val)                # 因为pre已经弹出了刚才根结点的值，所以这里利用root.val寻找索引
@@ -51,4 +51,4 @@ class Solution:
 
 # 感想
 
-一开始
+一开始看到这道题还是没有太大思路，一个是因为不知道如何初始化类的实例，一个是没有想到递归调用。在网上简单看了一下初始化后，便开始自己动手编，首先按照递归的模式写出来，然后自己开始有思路，只需要找到索引即可，但是这个时候遇到的问题是，不知道python中list类型如何按值查找索引，虽然自己之前过了一遍python语法，不过很明显自己并没有记住。这里既然用到了list类型，下面便将
