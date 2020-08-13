@@ -7,6 +7,7 @@
 **首先判断根结点是否为空，如果为空直接返回即可，否则，执行如下步骤：（1）首先反转根结点的左孩子和右孩子（在反转左孩子节点的时候，相当于反转左子树，右孩子节点同理）；（2）调用self.Mirror反转根结点的左孩子；（3）调用self.Mirror反转根结点的右孩子。**
 
 ```python
+
 class Solution:
     def Mirror(self , pRoot ):
         # write code here
