@@ -27,7 +27,7 @@ class Solution:
             qNode, cNode = qTmpNode, cTmpNode
         return True
         
-    def mirror(self, pRoot):                         # 镜像反转二叉树
+    def mirror(self, pRoot):                           # 镜像反转二叉树
         if not pRoot:
             return None
         pRoot.left, pRoot.right = pRoot.right, pRoot.left
@@ -35,21 +35,21 @@ class Solution:
         self.mirror(pRoot.right)
         return pRoot
         
-    def findNode(self, Node):                        # 遍历二叉树中下一层所有的节点
-        TmpNode = []                                 # 用来装下一层的节点
-        TmpVal = []                                  # 用来装下一层的值，存储值的作用在于进行对比是否二叉树对称
+    def findNode(self, Node):                          # 遍历二叉树中下一层所有的节点
+        TmpNode = []                                   # 用来装下一层的节点
+        TmpVal = []                                    # 用来装下一层的值，存储值的作用在于进行对比是否二叉树对称
         for n in Node:
             TmpVal.append(n.val)
             if n.left:
                 TmpNode.append(n.left)
                 TmpVal.append(n.left.val)
             else:
-                TmpVal.append(None)
+                TmpVal.append(None)                   # 非常重要！！！
             if n.right:
                 TmpNode.append(n.right)
                 TmpVal.append(n.right.val)
             else:
-                TmpVal.append(None)
+                TmpVal.append(None)                   # 非常重要！！！
         return TmpNode, TmpVal
         
     def copy(self, root):                             # 复制一颗二叉树的函数
@@ -63,5 +63,28 @@ class Solution:
 
 # 解答二
 
-解答一是一种很直观的暴力搜索的方法，使用解答一回顾了很多二叉树的基本代码，这些对于复习之前的知识是很有帮助的，但是还是需要掌握一下高级的解法。
+解答一是一种很直观的暴力搜索方法，使用解答一回顾了很多二叉树的基本代码，这些对于复习之前的知识是很有帮助的，但是还是需要掌握一下高级的解法。
 具体思路如下：
+* 首先判断是否根结点为空，是则返回True，否则返回一个递归函数的值，该递归函数用于判断左、右子树是否相等。
+* 然后进入递归函数，首先判断是否左右节点为空，都为空的话返回True。
+* 接着如果左右节点都非空的话，判断一下三个条件是否成立，如果成立，返回True：
+    * 左右节点的值是否相同
+    * 左孩子节点的左子树和右孩子节点的右子树是否相同
+    * 左孩子节点的右子树和右孩子节点的左子树是否相同
+* 如果左右孩子有一个非空，则返回False
+
+
+```python
+class Solution:
+    def isSymmetrical(self, pRoot):
+        # write code here
+        if not pRoot:
+            return True
+        return self.helper(pRoot.left, pRoot.right)
+    def helper(self, left, right):
+        if not left and not right:
+            return True
+        if left and right:
+            return left.val == right.val and self.helper(left.left, right.right) and self.helper(left.right, right.left)  # 核心代码
+        return False
+```
