@@ -62,4 +62,6 @@ class Solution:
 ```
 
 # 感想
-按照
+
+按照思路二来求解，我还是很多地方没有弄明白，不懂为什么这里是and：(p1.left, p2.left) and (p1.right, p2.right)？
+为什么这里是or：(p1.left, p2) or (p1.right, p2)？
