@@ -33,9 +33,14 @@ class Solution:
 
 正确的解答写的很简洁，但是很难理解，接下来大概写一下我个人的理解：
 首先第一个函数逻辑比较简单，因为题目中已经说了，空树不是任意一颗树的子结构，所以如果两棵树中有任意一颗为空树，直接返回False即可，否则返回一个递归函数的值，该递归函数用于判断是否有子树。
-递归函数两个重要的概念，递归终止条件和递归主体，接下来看一下isSubtree函数的这两个内容：
-* 递归终止条件：XXX
-* 递归主体： XXX
+递归函数有两个重要的概念，递归终止条件和递归主体，接下来看一下isSubtree函数的这两个内容：
+* 递归终止条件：
+    * 如果p2为空（此时需要注意，p2不可能在第一次调用时为空，因为HasSubtree函数已经排除掉pRoot2为空的情况，并且最低是在第二次迭代调用时访问的，因此此时可以保证p1.val == p2.val），表明在p1.val == p2.val的情况下p2的孩子节点为空，因此此时返回True。
+    * 如果p1为空，看一下p2是否为空，是的话返回True，否则返回False。
+* 递归主体：
+    * 首先让res默认设置为False。
+    * 然后判断是否p1.val == p2.val，是的话则进一步递归判断（p1.left和p2.left）and递归判断（p1.right和p2.right）（**这里没有搞懂**），否则进行下一步。
+    * 递归判断res or（p1.left和p2） or (p1.right和p2)（**这里也没有搞懂**）。
 
 ```python
 class Solution:
@@ -56,3 +61,5 @@ class Solution:
         return res or self.isSubtree(p1.left, p2) or self.isSubtree(p1.right, p2)
 ```
 
+# 感想
+按照
