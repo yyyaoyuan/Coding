@@ -35,3 +35,7 @@ class Solution:
             node = tmpNode
         return res
 ```
+
+# 感想
+现在在做这样的题感觉非常简单，但是我仍然犯了两个错误，第一个错误是边界条件的判断，应该返回[]而不是None，第二个是应该是将res.append(n.val)错写成res.append(root.val)，下次一定不能再错了，真正考试的时候只有一次
+               
