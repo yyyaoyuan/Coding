@@ -11,6 +11,10 @@
   * tmp：记录当前节点的下一个节点
 
 ```python
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 class Solution:
     # 返回ListNode
     def ReverseList(self, pHead):
