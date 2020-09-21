@@ -40,7 +40,7 @@ class Solution:
     def IsPopOrder(self, pushV, popV):
         # write code here
         stack = []
-        while popV:
+        while popV: # 下面if语句的顺序不能颠倒！！！
             if stack and stack[-1] == popV[0]:       # 核心代码块：模拟整个过程，如果stack的最后一个元素与popV中第一个元素相等，将两个元素都弹出
                 stack.pop()
                 popV.pop(0)                          # popV弹出第一个元素
