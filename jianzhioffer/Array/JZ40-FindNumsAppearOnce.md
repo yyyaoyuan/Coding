@@ -17,7 +17,13 @@ class Solution:
                 res.append(i)
         return res
 ```
-
+```python
+class Solution:
+    # 返回[a,b] 其中ab是出现一次的两个数字
+    def FindNumsAppearOnce(self, array):
+        # write code here
+        return [i for i in array if array.count(i) == 1]
+```
 # 解答二
 
 使用python内置的remove函数。
