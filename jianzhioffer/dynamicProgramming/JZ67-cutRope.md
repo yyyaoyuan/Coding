@@ -15,13 +15,13 @@ class Solution:
     def cutRope(self, number):
         # write code here
         if number == 2:
-            return 1
+            return 1        # 注意这里是1的原因是因为一定要切割，m>1
         if number == 3:
-            return 2
+            return 2        # 注意这里是2的原因是因为一定要切割，m>1
         dp = [0]*(number+1)
         dp[1] = 1
-        dp[2] = 2
-        dp[3] = 3
+        dp[2] = 2           # 注意这里是2的原因是n > 2，那么长度为2的可以不切割，所以最大为2
+        dp[3] = 3           # 注意这里是3的原因是n > 3，那么长度为3的可以不切割，所以最大为3；注意长度为4的时候不适用！！！！！    
         maxVal = 0
         for i in range(4, number+1):
             for j in range(1, i // 2 + 1):            # 注意这里只需算到一半即可。。。
