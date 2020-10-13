@@ -44,7 +44,7 @@ def process(string, k):
         string = list(str(int(new_string)))
         
         if len(string) == 1:
-           print((int(string[0]) + k - i + 1) % 2)
+           print((int(string[0]) + k - i + 1) % 2)        # 根据剩余长度为偶数还是奇数来计算最终输出结果
            exit()
     print(''.join(string))
 
