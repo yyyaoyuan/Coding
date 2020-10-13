@@ -44,7 +44,7 @@ def process(string, k):
         string = list(str(int(new_string)))
         
         if len(string) == 1:
-           print((int(string[0]) + k - idx + 1) % 2)
+           print((int(string[0]) + k - i + 1) % 2)
            exit()
     print(''.join(string))
 
