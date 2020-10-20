@@ -51,7 +51,30 @@ class Solution:
             return self.Power(base, exponent // 2) ** 2 if exponent % 2 == 0 else self.Power(base, exponent // 2) ** 2 * base # 记住这种写法
 ```
 
+# 解答三
+
+二分加循环。
+
+```python
+def myPower1(x, n):
+    if n < 0:
+        res = 1 / x
+        n = -n
+    else:
+        res = x
+    while n != 1:
+        if n % 2 == 0:
+            res *= res
+        else:
+            res = res * res * x
+        n = n // 2
+    return res
+```
+
 # 感想
 
 这道题自己应该怎样也想不出采用递归和二分的思路进行求解，先记住吧，以后遇到类似的题注意找到规律或许可以解决出来。另外，需要学习一个简介的if else写法：
 **A if x > y else B**
+
+
+第四范式面试考到了！！！！幸好复习到了，但是不太好的一点是非递归的循环写法没有写出来，不过自己复习到的面试写出来了还是值得肯定的，继续加油！！！
