@@ -26,5 +26,9 @@ class Solution:
 ```python
 class Solution:
     def ReverseSentence(self, s):
-        return ' '.join(s.split(' ')[::-1]) if s else s  # 这种写法
+        return ' '.join(s.split(' ')[::-1]) if s else s  # 这种写法真的好简洁优美！！！！
 ```
+
+# 感想
+
+这道题很简单，但是在这道题上我犯了一些细节错误，比如一开始迭代的时候，迭代的是索引不是元素，我直接把索引追加到列表中了，下次不能再犯这种低级别的错误了！！！
