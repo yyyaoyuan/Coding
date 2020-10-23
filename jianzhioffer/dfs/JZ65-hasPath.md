@@ -64,3 +64,41 @@ class Solution:
 ```
 
 # 解答二
+
+首先构造好矩阵，然后尽心回溯，代码写的非常简洁和优美，需要记住！！！
+
+```python
+class Solution:
+    def hasPath(self, matrix, rows, cols, path):
+        # write code here
+        if rows == 0 or cols == 0:
+            return False
+        self.build_matrix(matrix, rows, cols)
+        for i in range(rows):
+            for j in range(cols):
+                if self.find(i, j, 0, rows, cols, path):   # 对每一个(i, j)都进行深度优先遍历
+                    return True
+        return False
+
+    def find(self, i, j, l, rows, cols, path):
+        if l == len(path):   # 这里是重点，利用长度来判断，需要学习一个技巧！！！
+            return True
+        if i < 0 or i >= rows or j < 0 or j >= cols or self.flag[i][j] or self.new_matrix[i][j] != path[l]: # 注意这里self.flag[i][j]的使用
+            return False
+        self.flag[i][j] = 1   # 如果上述判断错误，首先标记为1，然后从(i, j)进行深度优先遍历
+        for d in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
+            x, y = i + d[0], j + d[1]
+            if self.find(x, y, l+1, rows, cols, path):
+                return True
+        self.flag[i][j] = 0   # 非常核心的点，此代码的作用是回溯，假如从(i, j)深度优先遍历无法寻找到路径，那么表明从(i, j)遍历走不通，标记回去0
+        return False
+
+    def build_matrix(self, matrix, rows, cols):
+        self.flag = []
+        self.new_matrix = []
+        for i in range(rows):
+            self.flag.append([0]*cols)
+            self.new_matrix.append(list(matrix[i*cols:cols+i*cols]))
+```
+
+# 感想
