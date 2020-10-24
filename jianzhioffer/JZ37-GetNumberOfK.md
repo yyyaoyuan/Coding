@@ -4,7 +4,7 @@
 
 # 解答一
 
-整体思路是，先找到第一个目标数字出现的索引idxFirst，再找到最后一个目标数字出现的索引idxLast，然后次数=idxFirst-idxLast+1。
+整体思路是，先找到第一个目标数字出现的索引idxFirst，再找到最后一个目标数字出现的索引idxLast，然后次数 = idxLast - idxFirst + 1。
 
 这里的问题是在于寻找idxFirst和idxLast，利用二分查找的思想进行解决。
 * 寻找idxFirst是往左找，注意判断是否到了边界
