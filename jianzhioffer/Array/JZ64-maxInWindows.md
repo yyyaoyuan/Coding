@@ -49,7 +49,5 @@ class Solution:
 
 # 感想
 
+这题应该主要考察双向队列的使用，队列头需要始终保持当前窗口下最大值的索引，需要两个
 这道题应该主要考察双向队列的使用，队列头需要始终保持当前窗口下最大值的
-
-            if len(queue) > 0 and queue[0] < i - size + 1:
-            if len(queue) > 0 and queue[0] 
