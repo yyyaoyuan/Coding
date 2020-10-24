@@ -25,3 +25,28 @@ class Solution:
 
 # 解答二：双向队列法
 
+用一个双端队列，队列第一个位置保存当前窗口最大值的索引，当窗口滑动一次
+* 判断当前索引指向的最大值是否过期
+* 新增加的值从队尾开始比较，把所有比他小的值丢掉
+
+```python
+class Solution:
+    def maxInWindows(self, num, size):
+        # write code here
+        if not num or size <= 0:
+            return []
+        queue, res = [], []
+        for i in range(len(num)):
+            if len(queue) > 0 and queue[0] < i - size + 1:
+                queue.pop(0)
+            while len(queue) > 0 and num[queue[-1]] < num[i]:
+                queue.pop()
+            queue.append(i)
+            if i >= size - 1:
+                res.append(num[queue[0]])
+        return res
+```
+
+# 感想
+
+这道题应该主要考察双向队列的使用，队列头
