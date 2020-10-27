@@ -6,8 +6,10 @@
 def select_sort(data):
     n = len(data)
     for i in range(n-1):          # 注意边界
+        min_idx = i
         for j in range(i+1, n):   # 注意边界
-            if data[i] > data[j]:
-                data[i], data[j] = data[j], data[i]
+            if data[min_idx] > data[j]:
+                min_idx = j
+        data[i], data[min_idx] = data[min_idx], data[i]
     return data
 ```
