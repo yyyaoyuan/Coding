@@ -8,8 +8,8 @@
 
 核心思想：比较两个字符串s1, s2大小的时候，先将它们拼接起来，比较s1+s2,和s2+s1那个大，如果s1+s2大，那说明s2应该放前面，所以按这个规则，s2就应该排在s1前面。
 
-## 选择排序
-
+## 冒泡排序一
+ 
 ```python
 class Solution:
     def PrintMinNumber(self, numbers):
@@ -29,7 +29,7 @@ class Solution:
         return int(res)
 ```
 
-## 冒泡排序
+## 冒泡排序二
 
 ```python
 class Solution:
