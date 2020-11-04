@@ -48,7 +48,8 @@ class Solution:
             else:
                 res.append(right[r])
                 r += 1
-                self.count += len(left) - l    # 核心代码！！！，因为归并排序时，左右两边都是有序的，只要在顺序遍历时出现left[l]大于right[r]的情况，那么left[l]后面的所有数都是大于right[r]的        res += left[l:]
+                self.count += len(left) - l    # 核心代码！！！，因为归并排序时，左右两边都是有序的，只要在顺序遍历时出现left[l]大于right[r]的情况，那么left[l]后面的所有数都是大于right[r]的        
+        res += left[l:]
         res += right[r:]
         return res
 ```
