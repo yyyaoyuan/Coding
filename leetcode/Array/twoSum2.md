@@ -26,7 +26,7 @@ class Solution:
         right = len(numbers)-1
         while left <= right:
             if numbers[left] + numbers[right] < target:
-                left += 1
+                left += 1 
             elif numbers[left] + numbers[right] > target:
                 right -= 1
             else:
@@ -50,9 +50,9 @@ class Solution:
             while left <= right:
                 mid = (left + right) // 2
                 if numbers[i] + numbers[mid] < target:
-                    left = mid+1
+                    left = mid+1           # 特别要注意下标
                 elif numbers[i] + numbers[mid] > target:
-                    right = mid-1
+                    right = mid-1          # 特别要注意下标
                 else:
                     return [i+1, mid+1]
         return []
