@@ -34,6 +34,30 @@ class Solution:
         return []
 ```
 
+# 解答二：二分搜索法
+
+首先遍历该数组，然后对当前元素后面的数字进行二分搜索。
+
+```python
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        if not numbers:
+            return
+        n = len(numbers)
+        for i in range(n):
+            left = i+1
+            right = n-1
+            while left <= right:
+                mid = (left + right) // 2
+                if numbers[i] + numbers[mid] < target:
+                    left = mid+1
+                elif numbers[i] + numbers[mid] > target:
+                    right = mid-1
+                else:
+                    return [i+1, mid+1]
+        return []
+```
+
 # 感想
 
 注意学习双指针方法在这里的使用，非常巧妙，和刚才无序场景下的哈希表一样巧妙。
