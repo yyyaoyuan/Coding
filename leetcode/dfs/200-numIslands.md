@@ -36,8 +36,7 @@ class Solution:
             return
         grid[i][j] = color
         for d in self.shift:
-            x, y = i + d[0], j + d[1]
-            self.dfs(grid, x, y, color)
+            self.dfs(grid, i + d[0], j + d[1], color)
 ```
 
 # 感想
