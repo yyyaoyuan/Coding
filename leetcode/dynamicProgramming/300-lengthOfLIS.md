@@ -15,7 +15,8 @@
 # 解答：动态规划
 
 * 状态：dp[i]表示nums[:i]中最长上升子序列的长度
-* 状态转移方程：dp
+* 初始情况：dp[i] = 1
+* 状态转移方程：if nums[i] > nums[j]: dp[i] = max(dp[i], dp[j] + 1)，0 <= j < i
 
 ```python
 class Solution:
@@ -30,3 +31,7 @@ class Solution:
                     dp[i] = max(dp[i], dp[j] + 1)
         return max(dp)
 ```
+
+# 感想
+
+leetcode刷的第三道动态规划题，继续好好刷题，用心来刷题，加油，加油，加油！
