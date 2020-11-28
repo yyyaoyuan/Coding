@@ -39,8 +39,8 @@
         for i in range(n):
             dp[i][i] = 1
 
-        for j in range(1, n):        # 注意是先对列进行遍历
-            for i in range(j):       # 再对行进行遍历！！！
+        for i in range(n-1, -1, -1): # 遍历顺利和最长回文子序列一致
+            for j in range(i+1, n):
                 if s[i] == s[j]:
                     if j - i < 3:      # 注意这个判断语句！！！！
                         dp[i][j] = 1
