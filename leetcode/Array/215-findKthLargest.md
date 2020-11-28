@@ -22,6 +22,8 @@
 ```python
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
+        if not nums or k > len(nums):
+           return False
         pivot = nums[0]
         nums.pop(0)      # 这里弹出是未了防止每次选取的pivot相同，如果len(numsR) > k的话，就会出现刚才的问题，所以需要弹出
         numsL = [i for i in nums if i < pivot]    # 这个代码牢记
