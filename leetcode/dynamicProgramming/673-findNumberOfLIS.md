@@ -45,7 +45,7 @@ class Solution:
 ```
  # 感想
  
- 在做完[最长递增子序列题][https://github.com/yyyaoyuan/Coding/blob/master/leetcode/dynamicProgramming/300-lengthOfLIS.md]以后，应该要有能力解决该问题，但是自己还是没有能独立想出解决方案，还是差很远，继续加油！！！！
+ 在做完[最长递增子序列题](https://github.com/yyyaoyuan/Coding/blob/master/leetcode/dynamicProgramming/300-lengthOfLIS.md)以后，应该要有能力解决该问题，但是自己还是没有能独立想出解决方案，还是差很远，继续加油！！！！
  
  **此题的关键在于如何判断是否最长递增子序列是第一次出现：
  
