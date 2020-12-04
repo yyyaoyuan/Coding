@@ -14,8 +14,8 @@ class Solution:
         res = 0
         for i in arr:
             if i > target:
-               count += 1
-        return count + 1
+               res += 1
+        return res + 1
 ```
 
 # 感想
