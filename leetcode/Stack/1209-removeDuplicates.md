@@ -42,7 +42,7 @@ class Solution:
                 stack.pop()
         ans = ''
         for s, l in stack:   # 对元素对的存取方法！！！
-            ans += s * l 
+            ans += s * l     # 对字符元素的处理方式
         return ans 
 ```
 
@@ -53,3 +53,5 @@ class Solution:
 * 栈刚开始的处理方法：if not stack or stack[-1][0] != c
 
 * 将元素和元素个数一起放进栈中：stack.append([c, 1])，**第一次遇见这种写法，注意学习！！！栈中可以追加列表元素，注意活学活用！！！**
+
+* '1' * 3 = '111'
