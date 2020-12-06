@@ -50,3 +50,7 @@ class Solution:
                 return False
         return True
 ```
+
+# 感想
+
+这道题时间过久了，忘记了，还是需要多练几遍，继续加油，坚持刷题，加油！！！！
