@@ -52,6 +52,43 @@ class Solution:
         return res
 ```
 
+# 解答二
+
+找规律求解，按照对角线往下进行扩展，终止条件为i到达min(m, n) // 2为止，因为每一圈都需要递减2行和2列。这里需要特别注意元素的下标，不能写错！！！
+
+```python
+class Solution:
+    # matrix类型为二维列表，需要返回列表
+    def printMatrix(self, matrix):
+        # write code here
+        if not matrix:
+            return
+        m, n = len(matrix), len(matrix[0])
+        t = min(m, n) // 2
+        res = []
+        for i in range(t):
+            for j in range(i, n-i):
+                res.append(matrix[i][j])
+            for l in range(i+1, m-i):
+                res.append(matrix[l][j])
+            for k in range(j-1, i-1, -1):
+                res.append(matrix[l][k])
+            for h in range(l-1, i, -1):
+                res.append(matrix[h][k])
+                
+        if min(m, n) % 2 != 0 and m >= n:
+            for i in range(t, m-t):
+                res.append(matrix[i][t])
+                
+        if min(m, n) % 2 != 0 and m < n:
+            for i in range(t, n-t):
+                res.append(matrix[t][i])
+                
+        return res
+```
+
 # 感想
 
 这个问题挺好的，一开始想到了使用4个指针，但是没搞清楚具体应该怎么赋值，还是需要多练习！加油！加油！加油！
+
+美团二面中遇见了这道题，但是自己因为之前做的太久了，所以忘记了解题思路，最后虽然在面试官的提示下写了一大半出来，但是我对自己的回答并不满意，遇到原题都没有很快做出来，这个真的是不应该！！！继续加油！！！相信自己！！！！
