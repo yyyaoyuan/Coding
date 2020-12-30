@@ -5,6 +5,7 @@
 ## 样例:
 
 输入：words = ['cat', 'dog', 'bee', 'act', 'horse', 'cow']
+
      s = 'tca'
 
 输出：['cat', 'act']
