@@ -4,11 +4,10 @@
 
 ## 样例:
 
-输入：words = ['dsassfdaa', 'dsassfd', 'dsassdf', 'dsassf']
+输入：words = ['cat', 'dog', 'bee', 'act', 'horse', 'cow']
+     s = 'tca'
 
-     instring = 'dsafdss'
-
-输出：['dsassdf', 'dsassfd']
+输出：['cat', 'act']
 
 # 解答一：暴力求解
 
