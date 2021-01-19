@@ -34,7 +34,7 @@ class Solution:
         elif len(numsR) > k - 1:
              return self.findKthLargest(numsR, k)   # 这个比较好理解
         else:
-             k = k - 1 - len(numsR)                  # 这里需要酸楚新的k，因为已经弹出了一个数字，所以k也变成了k-1，然后减去比较大的部分数组的长度
+             k = k - 1 - len(numsR)                  # 这里需要算出新的k，因为已经弹出了一个数字，所以k也变成了k-1，然后减去比较大的部分数组的长度
              return self.findKthLargest(numsL, k)
 ```
 
